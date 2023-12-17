@@ -16,6 +16,8 @@
 		BF6C43F52B2DBBD700384B5A /* TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C43F42B2DBBD700384B5A /* TrackerTests.swift */; };
 		BF6C43FF2B2DBBD700384B5A /* TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C43FE2B2DBBD700384B5A /* TrackerUITests.swift */; };
 		BF6C44012B2DBBD700384B5A /* TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C44002B2DBBD700384B5A /* TrackerUITestsLaunchTests.swift */; };
+		BF6C44102B2FC1CB00384B5A /* TrackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C440F2B2FC1CB00384B5A /* TrackersViewController.swift */; };
+		BF6C44122B2FC1ED00384B5A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BF6C43FA2B2DBBD700384B5A /* TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6C43FE2B2DBBD700384B5A /* TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerUITests.swift; sourceTree = "<group>"; };
 		BF6C44002B2DBBD700384B5A /* TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BF6C440F2B2FC1CB00384B5A /* TrackersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackersViewController.swift; sourceTree = "<group>"; };
+		BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				BF6C43E82B2DBBD700384B5A /* LaunchScreen.storyboard */,
 				BF6C43EB2B2DBBD700384B5A /* Info.plist */,
 				BF6C43E32B2DBBD600384B5A /* Tracker.xcdatamodeld */,
+				BF6C440F2B2FC1CB00384B5A /* TrackersViewController.swift */,
+				BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -259,6 +265,8 @@
 			files = (
 				BF6C43E52B2DBBD600384B5A /* Tracker.xcdatamodeld in Sources */,
 				BF6C43DF2B2DBBD600384B5A /* MainViewController.swift in Sources */,
+				BF6C44102B2FC1CB00384B5A /* TrackersViewController.swift in Sources */,
+				BF6C44122B2FC1ED00384B5A /* StatisticsViewController.swift in Sources */,
 				BF6C43DB2B2DBBD600384B5A /* AppDelegate.swift in Sources */,
 				BF6C43DD2B2DBBD600384B5A /* SceneDelegate.swift in Sources */,
 			);
