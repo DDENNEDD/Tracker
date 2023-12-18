@@ -25,7 +25,7 @@ final class TrackersViewController: UIViewController {
         dateLabel.sizeToFit()
 
         let dateContainerView = UIView(frame: CGRect(x: 0, y: 0, width: dateLabel.bounds.width + 16, height: dateLabel.bounds.height + 8))
-        dateContainerView.backgroundColor = .gray
+        dateContainerView.backgroundColor = .systemGray6
         dateContainerView.layer.cornerRadius = 8.0
         dateContainerView.addSubview(dateLabel)
 

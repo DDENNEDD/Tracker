@@ -12,6 +12,7 @@ final class TabBarViewController: UITabBarController {
         tabBar.isTranslucent = false
         tabBar.tintColor = .systemBlue
         tabBar.backgroundColor = .systemBackground
+        tabBar.layer.borderWidth = 0.50
     }
 
     private func createNavigationController(for rootViewController: UIViewController, title: String, imageName: String) -> UIViewController {
