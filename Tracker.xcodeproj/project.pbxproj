@@ -103,15 +103,13 @@
 		BF6C43D92B2DBBD600384B5A /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				BF6C44132B2FC2D300384B5A /* ViewControllers */,
 				BF6C43DA2B2DBBD600384B5A /* AppDelegate.swift */,
 				BF6C43DC2B2DBBD600384B5A /* SceneDelegate.swift */,
-				BF6C43DE2B2DBBD600384B5A /* MainViewController.swift */,
 				BF6C43E62B2DBBD700384B5A /* Assets.xcassets */,
 				BF6C43E82B2DBBD700384B5A /* LaunchScreen.storyboard */,
 				BF6C43EB2B2DBBD700384B5A /* Info.plist */,
 				BF6C43E32B2DBBD600384B5A /* Tracker.xcdatamodeld */,
-				BF6C440F2B2FC1CB00384B5A /* TrackersViewController.swift */,
-				BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */,
 			);
 			path = Tracker;
 			sourceTree = "<group>";
@@ -131,6 +129,16 @@
 				BF6C44002B2DBBD700384B5A /* TrackerUITestsLaunchTests.swift */,
 			);
 			path = TrackerUITests;
+			sourceTree = "<group>";
+		};
+		BF6C44132B2FC2D300384B5A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BF6C43DE2B2DBBD600384B5A /* MainViewController.swift */,
+				BF6C440F2B2FC1CB00384B5A /* TrackersViewController.swift */,
+				BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
