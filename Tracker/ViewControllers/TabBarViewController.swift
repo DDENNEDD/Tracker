@@ -1,6 +1,6 @@
 import UIKit
 
-final class MainViewController: UITabBarController {
+final class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -10,7 +10,8 @@ final class MainViewController: UITabBarController {
                            createNavigationController(for: statisticsViewController, title: "Statistics", imageName: "Stats")]
 
         tabBar.isTranslucent = false
-        tabBar.tintColor = .blue
+        tabBar.tintColor = .systemBlue
+        tabBar.backgroundColor = .systemBackground
     }
 
     private func createNavigationController(for rootViewController: UIViewController, title: String, imageName: String) -> UIViewController {
