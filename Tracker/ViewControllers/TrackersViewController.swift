@@ -27,7 +27,7 @@ final class TrackersViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         configUI()
         
                     
@@ -45,7 +45,7 @@ final class TrackersViewController: UIViewController {
             addNewTrackerButton.heightAnchor.constraint(equalToConstant: 42),
             datePicker.topAnchor.constraint(equalTo: view.topAnchor, constant: 49),
             datePicker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-            searchBar.topAnchor.constraint(equalTo: addNewTrackerButton.bottomAnchor, constant: 49),
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 136),
             searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
             searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
             
