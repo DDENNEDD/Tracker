@@ -20,7 +20,7 @@ final class TabBarViewController: UITabBarController {
         navigationController.tabBarItem.title = title
         navigationController.tabBarItem.image = UIImage(named: imageName)
 
-        // Set the title font and style
+       
         navigationController.navigationBar.largeTitleTextAttributes = [
             NSAttributedString.Key.font: UIFont.systemFont(ofSize: 34, weight: .bold)
         ]
@@ -32,7 +32,7 @@ final class TabBarViewController: UITabBarController {
             .compactMap({ $0 as? UILabel })
             .first(where: { $0.text == title }) {
 
-            // Add a top constraint to the title label
+    
             titleLabel.translatesAutoresizingMaskIntoConstraints = false
             let topConstraint = NSLayoutConstraint(
                 item: titleLabel,
@@ -41,10 +41,10 @@ final class TabBarViewController: UITabBarController {
                 toItem: navigationController.navigationBar,
                 attribute: .top,
                 multiplier: 1.0,
-                constant: 44.0 // Adjust this value as needed
+                constant: 44.0
             )
             
-            // Add a left margin constraint
+            
             let leftMarginConstraint = NSLayoutConstraint(
                 item: titleLabel,
                 attribute: .leading,
@@ -52,7 +52,7 @@ final class TabBarViewController: UITabBarController {
                 toItem: navigationController.navigationBar,
                 attribute: .leading,
                 multiplier: 1.0,
-                constant: 16.0 // Adjust this value as needed
+                constant: 16.0
             )
             
             NSLayoutConstraint.activate([topConstraint, leftMarginConstraint])
