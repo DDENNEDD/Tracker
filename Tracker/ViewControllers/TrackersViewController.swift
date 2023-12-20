@@ -22,21 +22,15 @@ final class TrackersViewController: UIViewController {
         navigationItem.searchController = searchController
 
         let addNewTrackerButtonImage = UIImage(named: "AddTracker")?.withRenderingMode(.alwaysOriginal)
-        let addNewTrackerButton = UIBarButtonItem(image: addNewTrackerButtonImage, style: .plain, target: self, action: #selector(addTracker))
+        let addNewTrackerButton = UIBarButtonItem(image: addNewTrackerButtonImage, style: .plain, target: self, action: #selector(didTapAddNewTrackerButton))
         navigationItem.leftBarButtonItem = addNewTrackerButton
 
         let datePickerButton = UIBarButtonItem(customView: datePicker)
         navigationItem.rightBarButtonItem = datePickerButton
     }
 
-    @objc func addTracker() {
+    @objc func didTapAddNewTrackerButton() {
         
-    }
-
-    private func getCurrentDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        return dateFormatter.string(from: Date())
     }
 }
 
