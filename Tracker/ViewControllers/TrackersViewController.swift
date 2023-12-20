@@ -1,51 +1,62 @@
 import UIKit
 
-
 final class TrackersViewController: UIViewController {
-
+    
+    private let datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.datePickerMode = .date
+        datePicker.date = Date()
+        return datePicker
+    }()
+    
+    private let addNewTrackerButton: UIButton = {
+        let addNewTrackerButton = UIButton()
+        addNewTrackerButton.setImage(UIImage(named: "AddTracker")!, for: .normal)
+        addNewTrackerButton.imageView?.contentMode = .scaleToFill
+        return addNewTrackerButton
+    }()
+    
+    private let searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        searchBar.placeholder = "Поиск"
+        return searchBar
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "Трекеры"
-
-        let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        navigationItem.searchController = searchController
-
-        let addNewTrackerButtonImage = UIImage(named: "AddTracker")?.withRenderingMode(.alwaysOriginal)
-        let addNewTrackerButton = UIBarButtonItem(image: addNewTrackerButtonImage, style: .plain, target: self, action: #selector(addTracker))
-        navigationItem.leftBarButtonItem = addNewTrackerButton
-
-        let currentDate = getCurrentDate()
-        let dateLabel = UILabel()
-        dateLabel.text = currentDate
-        dateLabel.font = UIFont.systemFont(ofSize: 14)
-        dateLabel.textColor = .black
-        dateLabel.sizeToFit()
-
-        let dateContainerView = UIView(frame: CGRect(x: 0, y: 0, width: dateLabel.bounds.width + 16, height: dateLabel.bounds.height + 8))
-        dateContainerView.backgroundColor = .systemGray6
-        dateContainerView.layer.cornerRadius = 8.0
-        dateContainerView.addSubview(dateLabel)
-
-        let dateItem = UIBarButtonItem(customView: dateContainerView)
-        navigationItem.rightBarButtonItem = dateItem
+        configUI()
+        
+                    
     }
-
-    @objc func addTracker() {
+    
+    private func configUI(){
+        let allViewOnScreen = [addNewTrackerButton, datePicker, searchBar]
+        allViewOnScreen.forEach {view.addSubview($0)}
+        allViewOnScreen.forEach {$0.translatesAutoresizingMaskIntoConstraints = false}
+        
+        NSLayoutConstraint.activate([
+            addNewTrackerButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 45),
+            addNewTrackerButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 6),
+            addNewTrackerButton.widthAnchor.constraint(equalToConstant: 42),
+            addNewTrackerButton.heightAnchor.constraint(equalToConstant: 42),
+            datePicker.topAnchor.constraint(equalTo: view.topAnchor, constant: 49),
+            datePicker.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
+            searchBar.topAnchor.constraint(equalTo: addNewTrackerButton.bottomAnchor, constant: 49),
+            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
+            searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16)
+            
+                    
+                ])
         
     }
-
-    private func getCurrentDate() -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd.MM.yyyy"
-        return dateFormatter.string(from: Date())
-    }
-}
-
-extension TrackersViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
+    
+    
+    @objc func didTapAddNewTrackerButton() {
         
     }
+    
 }
