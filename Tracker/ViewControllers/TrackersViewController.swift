@@ -2,10 +2,19 @@ import UIKit
 
 
 final class TrackersViewController: UIViewController {
-
+    
+    private let datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.preferredDatePickerStyle = .compact
+        datePicker.datePickerMode = .date
+        datePicker.date = Date()
+        return datePicker
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         title = "Трекеры"
 
         let searchController = UISearchController(searchResultsController: nil)
@@ -17,20 +26,8 @@ final class TrackersViewController: UIViewController {
         let addNewTrackerButton = UIBarButtonItem(image: addNewTrackerButtonImage, style: .plain, target: self, action: #selector(addTracker))
         navigationItem.leftBarButtonItem = addNewTrackerButton
 
-        let currentDate = getCurrentDate()
-        let dateLabel = UILabel()
-        dateLabel.text = currentDate
-        dateLabel.font = UIFont.systemFont(ofSize: 14)
-        dateLabel.textColor = .black
-        dateLabel.sizeToFit()
-
-        let dateContainerView = UIView(frame: CGRect(x: 0, y: 0, width: dateLabel.bounds.width + 16, height: dateLabel.bounds.height + 8))
-        dateContainerView.backgroundColor = .gray
-        dateContainerView.layer.cornerRadius = 8.0
-        dateContainerView.addSubview(dateLabel)
-
-        let dateItem = UIBarButtonItem(customView: dateContainerView)
-        navigationItem.rightBarButtonItem = dateItem
+        let datePickerButton = UIBarButtonItem(customView: datePicker)
+        navigationItem.rightBarButtonItem = datePickerButton
     }
 
     @objc func addTracker() {

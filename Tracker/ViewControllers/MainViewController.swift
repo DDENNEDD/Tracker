@@ -6,11 +6,12 @@ final class MainViewController: UITabBarController {
         super.viewDidLoad()
         let trackersViewController = TrackersViewController()
         let statisticsViewController = StatisticsViewController()
-        viewControllers = [createNavigationController(for: trackersViewController, title: "Trackers", imageName: "Trackers"),
-                           createNavigationController(for: statisticsViewController, title: "Statistics", imageName: "Stats")]
+        viewControllers = [createNavigationController(for: trackersViewController, title: "Трекеры", imageName: "Trackers"),
+                           createNavigationController(for: statisticsViewController, title: "Статистика", imageName: "Stats")]
 
         tabBar.isTranslucent = false
-        tabBar.tintColor = .blue
+        tabBar.tintColor = .systemBlue
+        view.backgroundColor = .systemBackground
     }
 
     private func createNavigationController(for rootViewController: UIViewController, title: String, imageName: String) -> UIViewController {
