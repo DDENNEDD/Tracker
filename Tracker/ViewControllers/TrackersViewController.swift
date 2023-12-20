@@ -15,7 +15,6 @@ final class TrackersViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        title = "Трекеры"
 
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
