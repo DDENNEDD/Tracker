@@ -1,14 +1,18 @@
 import UIKit
 
 final class TabBarViewController: UITabBarController {
+    private let trackersViewControllerImage = "Trackers"
+    private let trackersViewControllerTitle = "Трекеры"
+    private let statisticsViewControllerImage = "Stats"
+    private let statisticsViewControllerTitle = "Статистика"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let trackersViewController = TrackersViewController()
-        let statisticsViewController = StatisticsViewController()
-        viewControllers = [createNavigationController(for: trackersViewController, title: "Трекеры", imageName: "Trackers"),
-                           createNavigationController(for: statisticsViewController, title: "Статистика", imageName: "Stats")]
-
+        createViewControllers()
+        configTabBar()
+    }
+    
+    private func configTabBar(){
         tabBar.isTranslucent = false
         tabBar.tintColor = .systemBlue
         view.backgroundColor = .systemBackground
@@ -17,7 +21,18 @@ final class TabBarViewController: UITabBarController {
         let separator = UIView(frame: CGRect(x: 0, y: 0, width: tabBar.frame.size.width, height: separatorHeight))
         separator.backgroundColor = .systemGray
         tabBar.addSubview(separator)
-        
+    }
+    
+    private func createViewControllers(){
+        let trackersViewController = TrackersViewController()
+        let statisticsViewController = StatisticsViewController()
+        viewControllers = [createNavigationController(for: trackersViewController,
+                                                      title: trackersViewControllerTitle,
+                                                      imageName: trackersViewControllerImage),
+                           createNavigationController(for: statisticsViewController,
+                                                      title: statisticsViewControllerTitle,
+                                                      imageName: statisticsViewControllerImage)]
+
     }
 
     private func createNavigationController(for rootViewController: UIViewController, title: String, imageName: String) -> UIViewController {
