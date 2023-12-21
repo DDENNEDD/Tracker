@@ -38,7 +38,7 @@ final class TrackersViewController: UIViewController {
             let localeID = Locale.preferredLanguages.first
             datePicker.preferredDatePickerStyle = .compact
             datePicker.datePickerMode = .date
-            datePicker.locale = .init(identifier: localeID ?? "ru-RU")
+            datePicker.locale = .init(identifier: localeID!)
             datePicker.date = Date()
             return datePicker
         }()
