@@ -16,7 +16,7 @@ final class TrackersViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configSearchController()
-        newTrackerButton()
+        addNewTrackerButton()
         datePickerButton()
     }
 
@@ -31,9 +31,12 @@ final class TrackersViewController: UIViewController {
         navigationItem.searchController = searchController
     }
     
-    private func newTrackerButton(){
+    private func addNewTrackerButton(){
         let addNewTrackerButtonImage = UIImage(named: "AddTracker")?.withRenderingMode(.alwaysOriginal)
-        let addNewTrackerButton = UIBarButtonItem(image: addNewTrackerButtonImage, style: .plain, target: self, action: #selector(didTapAddNewTrackerButton))
+        let addNewTrackerButton = UIBarButtonItem(image: addNewTrackerButtonImage, 
+                                                  style: .plain,
+                                                  target: self,
+                                                  action: #selector(didTapAddNewTrackerButton))
         navigationItem.leftBarButtonItem = addNewTrackerButton
     }
     
