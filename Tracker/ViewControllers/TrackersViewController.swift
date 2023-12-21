@@ -3,35 +3,27 @@ import UIKit
 
 final class TrackersViewController: UIViewController {
     
-    private let datePicker: UIDatePicker = {
-        let datePicker = UIDatePicker()
-        datePicker.preferredDatePickerStyle = .compact
-        datePicker.datePickerMode = .date
-        datePicker.date = Date()
-        return datePicker
-    }()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        configSearchController()
-        addNewTrackerButton()
-        datePickerButton()
+        configSearchControllerView()
+        addNewTrackerButtonView()
+        datePickerView()
     }
 
     @objc func didTapAddNewTrackerButton() {
         print("Есть Нажатие!")
     }
     
-    private func configSearchController(){
+    private func configSearchControllerView(){
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Поиск"
         navigationItem.searchController = searchController
     }
     
-    private func addNewTrackerButton(){
+    private func addNewTrackerButtonView(){
         let addNewTrackerButtonImage = UIImage(named: "AddTracker")?.withRenderingMode(.alwaysOriginal)
         let addNewTrackerButton = UIBarButtonItem(image: addNewTrackerButtonImage, 
                                                   style: .plain,
@@ -40,9 +32,19 @@ final class TrackersViewController: UIViewController {
         navigationItem.leftBarButtonItem = addNewTrackerButton
     }
     
-    private func datePickerButton(){
-        let datePickerButton = UIBarButtonItem(customView: datePicker)
-        navigationItem.rightBarButtonItem = datePickerButton
+    private func datePickerView(){
+        let datePicker: UIDatePicker = {
+            let datePicker = UIDatePicker()
+            let localeID = Locale.preferredLanguages.first
+            datePicker.preferredDatePickerStyle = .compact
+            datePicker.datePickerMode = .date
+            datePicker.locale = .init(identifier: localeID ?? "ru-RU")
+            datePicker.date = Date()
+            return datePicker
+        }()
+        
+        let datePickerView = UIBarButtonItem(customView: datePicker)
+        navigationItem.rightBarButtonItem = datePickerView
     }
 }
 
