@@ -1,5 +1,6 @@
 import UIKit
 
+
 final class TabBarViewController: UITabBarController {
     private let trackersViewControllerImage = "Trackers"
     private let trackersViewControllerTitle = "Трекеры"
@@ -17,7 +18,7 @@ final class TabBarViewController: UITabBarController {
         tabBar.tintColor = .systemBlue
         view.backgroundColor = .systemBackground
         
-        let separatorHeight: CGFloat = 1
+        let separatorHeight: CGFloat = 0.5
         let separator = UIView(frame: CGRect(x: 0, y: 0, width: tabBar.frame.size.width, height: separatorHeight))
         separator.backgroundColor = .systemGray
         tabBar.addSubview(separator)
