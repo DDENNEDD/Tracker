@@ -53,3 +53,4 @@ extension TrackersViewController: UISearchResultsUpdating {
         
     }
 }
+
