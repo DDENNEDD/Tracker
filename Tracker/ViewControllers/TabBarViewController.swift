@@ -1,31 +1,49 @@
 import UIKit
 
+
 final class TabBarViewController: UITabBarController {
+    private let trackersViewControllerImage = "Trackers"
+    private let trackersViewControllerTitle = "Трекеры"
+    private let statisticsViewControllerImage = "Stats"
+    private let statisticsViewControllerTitle = "Статистика"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        createViewControllers()
         configTabBar()
-        viewControllers = [
-            createTabViewController(for: TrackersViewController(), title: "Трекеры", imageName: "Trackers"),
-            createTabViewController(for: StatisticsViewController(), title: "Статистика", imageName: "Stats")
-        ]
     }
-
     
     private func configTabBar(){
-        tabBar.backgroundColor = .systemBackground
         tabBar.isTranslucent = false
-        tabBar.layer.borderWidth = 0.50
+        tabBar.tintColor = .systemBlue
+        view.backgroundColor = .systemBackground
+        
+        let separatorHeight: CGFloat = 0.5
+        let separator = UIView(frame: CGRect(x: 0, y: 0, width: tabBar.frame.size.width, height: separatorHeight))
+        separator.backgroundColor = .systemGray
+        tabBar.addSubview(separator)
     }
     
-    private func createTabViewController(for rootViewController: UIViewController, title: String, imageName: String) -> UIViewController {
+    private func createViewControllers(){
+        let trackersViewController = TrackersViewController()
+        let statisticsViewController = StatisticsViewController()
+        viewControllers = [createNavigationController(for: trackersViewController,
+                                                      title: trackersViewControllerTitle,
+                                                      imageName: trackersViewControllerImage),
+                           createNavigationController(for: statisticsViewController,
+                                                      title: statisticsViewControllerTitle,
+                                                      imageName: statisticsViewControllerImage)]
+
+    }
+
+    private func createNavigationController(for rootViewController: UIViewController, 
+                                            title: String,
+                                            imageName: String) -> UIViewController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
-        navigationController.tabBarItem = UITabBarItem(title: title, image: UIImage(named: imageName), tag: 0)
-
+        navigationController.tabBarItem.title = title
+        navigationController.tabBarItem.image = UIImage(named: imageName)
         navigationController.navigationBar.prefersLargeTitles = true
-        navigationController.navigationBar.largeTitleTextAttributes = [.font: UIFont.systemFont(ofSize: 34, weight: .bold)]
         rootViewController.navigationItem.title = title
-
         return navigationController
     }
 }
