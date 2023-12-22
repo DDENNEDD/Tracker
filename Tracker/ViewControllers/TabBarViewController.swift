@@ -36,7 +36,9 @@ final class TabBarViewController: UITabBarController {
 
     }
 
-    private func createNavigationController(for rootViewController: UIViewController, title: String, imageName: String) -> UIViewController {
+    private func createNavigationController(for rootViewController: UIViewController, 
+                                            title: String,
+                                            imageName: String) -> UIViewController {
         let navigationController = UINavigationController(rootViewController: rootViewController)
         navigationController.tabBarItem.title = title
         navigationController.tabBarItem.image = UIImage(named: imageName)
