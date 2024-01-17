@@ -3,17 +3,60 @@ import UIKit
 
 final class TrackersViewController: UIViewController {
     
+    private var placeholderImageView: UIImageView?
+    private var placeholderLabelView: UILabel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         configSearchControllerView()
         addNewTrackerButtonView()
         datePickerView()
+        setupPlaceholderView()
+        refreshTrackersData()
     }
 
     @objc func didTapAddNewTrackerButton() {
         print("Есть Нажатие!")
     }
+    
+    private func setupPlaceholderView() {
+            let imageView = UIImageView()
+            imageView.image = UIImage(named: "PlaceHolderImage")
+            imageView.contentMode = .scaleAspectFit
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(imageView)
+        
+        let label = UILabel()
+            label.text = "Что будем отслеживать?"
+            label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 12)
+            label.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(label)
+        
+            NSLayoutConstraint.activate([
+                imageView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
+                imageView.centerYAnchor.constraint(equalTo: view.bottomAnchor, constant: -330),
+                imageView.widthAnchor.constraint(equalToConstant: 80),
+                imageView.heightAnchor.constraint(equalToConstant: 80),
+                label.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8),
+                label.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
+            ])
+            placeholderImageView = imageView
+            placeholderLabelView = label
+            
+        }
+
+        private func updatePlaceholderVisibility(show: Bool) {
+            placeholderImageView?.isHidden = !show
+            placeholderLabelView?.isHidden = !show
+        }
+    
+    func refreshTrackersData() {
+            let hasData = false
+            updatePlaceholderVisibility(show: !hasData)
+        }
+    
     
     private func configSearchControllerView(){
         let searchController = UISearchController(searchResultsController: nil)
