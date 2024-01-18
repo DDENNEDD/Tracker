@@ -78,10 +78,9 @@ final class TrackersViewController: UIViewController {
     private func datePickerView(){
         let datePicker: UIDatePicker = {
             let datePicker = UIDatePicker()
-            let localeID = Locale.preferredLanguages.first
             datePicker.preferredDatePickerStyle = .compact
             datePicker.datePickerMode = .date
-            datePicker.locale = Locale(identifier: localeID!)
+            datePicker.locale = .current
             datePicker.date = Date()
             datePicker.translatesAutoresizingMaskIntoConstraints = false
             return datePicker
