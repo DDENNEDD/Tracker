@@ -83,8 +83,14 @@ final class TrackersViewController: UIViewController {
             datePicker.datePickerMode = .date
             datePicker.locale = Locale(identifier: localeID!)
             datePicker.date = Date()
+            datePicker.translatesAutoresizingMaskIntoConstraints = false
             return datePicker
         }()
+        
+        NSLayoutConstraint.activate([
+                datePicker.widthAnchor.constraint(equalToConstant: 120),
+                datePicker.heightAnchor.constraint(equalToConstant: 34)
+            ])
         
         let datePickerView = UIBarButtonItem(customView: datePicker)
         navigationItem.rightBarButtonItem = datePickerView
