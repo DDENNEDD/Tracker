@@ -18,6 +18,9 @@
 		BF6C44012B2DBBD700384B5A /* TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C44002B2DBBD700384B5A /* TrackerUITestsLaunchTests.swift */; };
 		BF6C44102B2FC1CB00384B5A /* TrackersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C440F2B2FC1CB00384B5A /* TrackersViewController.swift */; };
 		BF6C44122B2FC1ED00384B5A /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */; };
+		BF793C472B5DE0C10021AB07 /* TrackerRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF793C462B5DE0C10021AB07 /* TrackerRecord.swift */; };
+		BF793C492B5DE0D60021AB07 /* TrackerCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF793C482B5DE0D60021AB07 /* TrackerCategory.swift */; };
+		BF793C4B2B5DE0F10021AB07 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF793C4A2B5DE0F10021AB07 /* Tracker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		BF6C44002B2DBBD700384B5A /* TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BF6C440F2B2FC1CB00384B5A /* TrackersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackersViewController.swift; sourceTree = "<group>"; };
 		BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		BF793C462B5DE0C10021AB07 /* TrackerRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerRecord.swift; sourceTree = "<group>"; };
+		BF793C482B5DE0D60021AB07 /* TrackerCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerCategory.swift; sourceTree = "<group>"; };
+		BF793C4A2B5DE0F10021AB07 /* Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tracker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,7 @@
 		BF6C43D92B2DBBD600384B5A /* Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				BF793C452B5DE09A0021AB07 /* Models */,
 				BF6C44132B2FC2D300384B5A /* ViewControllers */,
 				BF6C43DA2B2DBBD600384B5A /* AppDelegate.swift */,
 				BF6C43DC2B2DBBD600384B5A /* SceneDelegate.swift */,
@@ -139,6 +146,16 @@
 				BF6C44112B2FC1ED00384B5A /* StatisticsViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		BF793C452B5DE09A0021AB07 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF793C462B5DE0C10021AB07 /* TrackerRecord.swift */,
+				BF793C482B5DE0D60021AB07 /* TrackerCategory.swift */,
+				BF793C4A2B5DE0F10021AB07 /* Tracker.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,7 +290,10 @@
 			files = (
 				BF6C43E52B2DBBD600384B5A /* Tracker.xcdatamodeld in Sources */,
 				BF6C43DF2B2DBBD600384B5A /* TabBarViewController.swift in Sources */,
+				BF793C492B5DE0D60021AB07 /* TrackerCategory.swift in Sources */,
+				BF793C4B2B5DE0F10021AB07 /* Tracker.swift in Sources */,
 				BF6C44102B2FC1CB00384B5A /* TrackersViewController.swift in Sources */,
+				BF793C472B5DE0C10021AB07 /* TrackerRecord.swift in Sources */,
 				BF6C44122B2FC1ED00384B5A /* StatisticsViewController.swift in Sources */,
 				BF6C43DB2B2DBBD600384B5A /* AppDelegate.swift in Sources */,
 				BF6C43DD2B2DBBD600384B5A /* SceneDelegate.swift in Sources */,

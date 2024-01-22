@@ -6,6 +6,9 @@ final class TrackersViewController: UIViewController {
     private var placeholderImageView: UIImageView?
     private var placeholderLabelView: UILabel?
     
+    var categories: [TrackerCategory] = []
+    var completedTrackers: [TrackerRecord] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -53,7 +56,7 @@ final class TrackersViewController: UIViewController {
         }
     
     func refreshTrackersData() {
-            let hasData = false
+        let hasData = !categories.isEmpty
             updatePlaceholderVisibility(show: !hasData)
         }
     
